@@ -1,11 +1,24 @@
 <template>
   <div style="display: flex; justify-content: center">
     <div class="homepage-container">
-      <h1>Добро пожаловать в ваш умный офис</h1>
+      <h1>
+        Добро пожаловать в ваш
+        <i
+          style="
+            text-decoration: underline;
+            text-decoration-style: dashed;
+            color: #e30611;
+          "
+          >умный</i
+        >
+        офис
+      </h1>
       <HrRed />
       <h2>Для начала, стоит войти в аккаунт:</h2>
       <div class="login-buttons-container">
-        <vs-button size="xl" block color="#e30611"> Войти </vs-button>
+        <vs-button size="xl" block color="#e30611" @click="goToLoginPage">
+          Войти
+        </vs-button>
         <vs-button
           size="xl"
           block
@@ -27,6 +40,11 @@ import HrRed from "@/components/HrRed.vue";
 export default {
   name: "App",
   components: { HrRed },
+  methods: {
+    goToLoginPage() {
+      this.$router.push({ name: "Login" });
+    },
+  },
 };
 </script>
 

@@ -26,6 +26,10 @@ export default {
   font-family: "MTSWide-Medium";
 }
 
+.vs-input {
+  font-family: "MTSWide-Medium";
+}
+
 h1 {
   font-family: "MTSExtended-Bold";
   color: #000;
