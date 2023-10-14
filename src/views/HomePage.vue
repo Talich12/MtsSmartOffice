@@ -1,71 +1,44 @@
 <template>
-    <div>
-        <h1>Добро пожаловать в твой умный офис</h1>
-        <hr>
-        <h2>Тебе стоит зайти в аккаунт:</h2>
-        <div class="login">
-            <vs-button class="button" color="danger" type="filled">Войти</vs-button> 
-            <vs-button class="button" color="danger" type="filled">Зарегистрироваться</vs-button> 
-        </div>
+  <div style="display: flex; justify-content: center">
+    <div class="HomePageContainer">
+      <h1>Добро пожаловать в твой умный офис</h1>
+      <HrRed />
+      <h2>Тебе стоит войти в аккаунт:</h2>
+      <div class="login">
+        <vs-button class="button" color="danger" type="filled">Войти</vs-button>
+        <vs-button class="button" color="danger" type="filled"
+          >Зарегистрироваться</vs-button
+        >
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
+import HrRed from "@/components/HrRed.vue";
 
 export default {
-name: 'App',
-components: {
-}
-}
+  name: "App",
+  components: { HrRed },
+};
 </script>
 
 <style>
-@import '../assets/fonts.css';
+@import "../assets/fonts.css";
 
-body{
-    background-color: black;
+.HomePageContainer {
+  width: 50vw;
 }
 
-#app {
-font-family: Avenir, Helvetica, Arial, sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-text-align: center;
-color: #2c3e50;
-margin-top: 60px;
-}
-
-h1 {
-    margin-top: 300px;
-    font-family: 'MTSExtended-Bold';
-    color: white;
-    font-size: 50px;
-}
-
-h2{
-    margin-top: 30px;
-    font-family: 'MTSExtended-Bold';
-    color: white;
-    font-size: 25px;
-}
-
-hr {
-    margin: 0 50px;
+body {
+  background-color: black;
 }
 
 .login {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.button{
-    margin-top: 10px;
-    height: 60px;
-    width: 500px;
-    font-size: 30px;
-    font-family: 'MTSExtended-Medium';
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
