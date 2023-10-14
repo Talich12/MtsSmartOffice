@@ -15,49 +15,49 @@
         <vs-input
           state="#e30611"
           color="#e30611"
-          v-model="value_firstName"
+          v-model="name"
           label="Ваше имя"
         />
         <vs-input
           state="#e30611"
           color="#e30611"
-          v-model="value_lastName"
+          v-model="surname"
           label="Фамилия"
         />
         <vs-input
           state="#e30611"
           color="#e30611"
-          v-model="value_username"
+          v-model="patronymic"
           label="Отчество"
         />
         <vs-input
           state="#e30611"
           color="#e30611"
-          v-model="value_password"
+          v-model="password"
           label="Введите пароль"
         />
         <vs-input
           state="#e30611"
           color="#e30611"
-          v-model="value_confirmPassword"
+          v-model="confirm_password"
           label="Повторите пароль"
         />
         <vs-input
           state="#e30611"
           color="#e30611"
-          v-model="value_phone"
+          v-model="phone"
           label="Телефон"
         />
         <vs-input
           state="#e30611"
           color="#e30611"
-          v-model="value_email"
+          v-model="email"
           label="Email"
         />
         <vs-input
           state="#e30611"
           color="#e30611"
-          v-model="value_staff"
+          v-model="state"
           label="Ваш штат"
         />
         <vs-button relief color="#e30611" @click="register">
@@ -70,21 +70,38 @@
 
 <script>
 import MTSLogo from "@/components/MTSLogo.vue";
-
+import axios from "axios";
 export default {
   name: "RegistrationPage",
   data() {
     return {
-      firstName: "",
-      lastName: "",
-      username: "",
+      name: "",
+      surname: "",
+      patronymic: "",
       password: "",
-      confirmPassword: "",
+      confirm_password: "",
+      phone: "",
+      state: "",
     };
   },
   methods: {
     register() {
-      // Registration logic goes here
+      axios.post('http://10.193.141.30:3000/signup', {
+        name: this.name,
+        surname: this.surname,
+        patronymic: this.patronymic,
+        email: this.email,
+        password: this.password,
+        confirm_password: this.confirm_password,
+        phone: this.phone,
+        state: this.state,
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
     },
   },
   components: { MTSLogo },
