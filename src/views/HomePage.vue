@@ -4,11 +4,14 @@
       <img style="height: 3rem" src="../assets/logofull.svg" alt="Logo" />
     </header>
     <div style="width: 100vw; height: 100vh">
+      <InteractionBlock></InteractionBlock>
       <h2 style="margin-top: 2vh">Удобства</h2>
-      <ComfortBlock></ComfortBlock>
+      <ComfortBlock class="animate__animated animate__bounce"></ComfortBlock>
       <h2>Помещения</h2>
       <RoomsBlock></RoomsBlock>
-      <h2>Доска объявлений</h2>
+      <div data-aos="fade-right">
+        <h2>Доска объявлений</h2>
+      </div>
       <OrderBLock></OrderBLock>
     </div>
     <OpacitySidebar></OpacitySidebar>
@@ -19,9 +22,16 @@
 import OpacitySidebar from "@/components/OpacitySidebar.vue";
 import ComfortBlock from "../contentblocks/ComfortBlock.vue";
 import RoomsBlock from "../contentblocks/RoomsBlock.vue";
-import OrderBLock from "../contentblocks/OrderBoardBlock.vue"
+import OrderBLock from "../contentblocks/OrderBoardBlock.vue";
+import InteractionBlock from "@/contentblocks/InteractionBlock.vue";
 export default {
-  components: { OpacitySidebar, ComfortBlock, RoomsBlock, OrderBLock },
+  components: {
+    OpacitySidebar,
+    ComfortBlock,
+    RoomsBlock,
+    OrderBLock,
+    InteractionBlock,
+  },
 };
 </script>
 
