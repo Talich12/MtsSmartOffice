@@ -5,11 +5,15 @@
     </header>
     <div style="width: 100vw; height: 100vh">
       <InteractionBlock></InteractionBlock>
-      <h2 style="margin-top: 2vh">Удобства</h2>
-      <ComfortBlock class="animate__animated animate__bounce"></ComfortBlock>
-      <h2>Помещения</h2>
+      <div class="animate__animated animate__fadeIn">
+        <h2 style="margin-top: 2vh">Удобства</h2>
+      </div>
+      <ComfortBlock></ComfortBlock>
+      <div class="animate__animated animate__fadeIn">
+        <h2>Помещения</h2>
+      </div>
       <RoomsBlock></RoomsBlock>
-      <div data-aos="fade-right">
+      <div class="animate__animated animate__fadeIn">
         <h2>Доска объявлений</h2>
       </div>
       <OrderBLock></OrderBLock>
