@@ -1,15 +1,21 @@
 <template>
-  <div style="display: flex; justify-content: center">
+  <div
+    style="display: flex; justify-content: center"
+    class="animate__animated animate__fadeIn"
+  >
+    <img id="logo" data="../assets/logofull.svg" type="svg" />
+
     <div class="homepage-container">
       <h1>
         Добро пожаловать в ваш
-        <i
+        <span
           style="
             text-decoration: underline;
             text-decoration-style: dashed;
             color: #e30611;
           "
-          >умный</i
+        >
+          умный</span
         >
         офис
       </h1>
@@ -20,13 +26,26 @@
           Войти
         </vs-button>
         <vs-button
-          size="xl"
+          size="large"
           block
           color="#e30611"
           flat
           style="margin-top: 1rem"
+          @click="goToRegisterPage"
         >
-          У меня нет аккаунта
+          У меня еще нет аккаунта
+        </vs-button>
+        <vs-button
+          size="large"
+          block
+          icon
+          color="#e30611"
+          flat
+          style="margin-top: 1rem"
+          @click="goToHelpPage"
+        >
+          <i class="bx bx-help-circle" style="margin-right: 0.5rem"></i>
+          Мне нужна помощь
         </vs-button>
       </div>
       <p style="bottom: 0">© 2023 ПАО «МТС» Все права защищены</p>
@@ -44,12 +63,22 @@ export default {
     goToLoginPage() {
       this.$router.push({ name: "Login" });
     },
+    goToRegisterPage() {
+      this.$router.push({ name: "Registration" });
+    },
   },
 };
 </script>
 
 <style>
 @import "../assets/fonts.css";
+
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
 
 .login-buttons-container {
   margin: 0 auto;

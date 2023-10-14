@@ -13,9 +13,17 @@ export default {
 
 <style>
 @import "./assets/reset.css";
+@import "animate.css";
+@import "boxicons";
+
+:root {
+  --text-color: #000;
+  --button-text-color: #fff;
+  --background-color: #fff;
+}
 
 #app {
-  background-color: #fff;
+  background-color: var(--background-color);
   font-family: "MTSCompact-Bold";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,13 +40,13 @@ export default {
 
 h1 {
   font-family: "MTSExtended-Bold";
-  color: #000;
+  color: var(--main-color);
   font-size: 3rem;
 }
 
 h2 {
   font-family: "MTSWide-Bold";
-  color: #000;
+  color: var(--main-color);
   font-size: 2rem;
 }
 </style>

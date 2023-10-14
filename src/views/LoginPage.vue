@@ -9,7 +9,7 @@
       background-size: 40px 40px;
     "
   >
-    <div class="login-container">
+    <div class="login-container animate__animated animate__fadeIn">
       <h1>Войти</h1>
       <vs-input
         state="#e30611"
