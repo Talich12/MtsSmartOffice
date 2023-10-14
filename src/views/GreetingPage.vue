@@ -4,6 +4,7 @@
     class="animate__animated animate__fadeIn"
   >
     <MTSLogo></MTSLogo>
+    <OpacitySidebar></OpacitySidebar>
     <div class="homepage-container">
       <h1>
         Добро пожаловать в ваш
@@ -55,10 +56,11 @@
 <script>
 import HrRed from "@/components/HrRed.vue";
 import MTSLogo from "@/components/MTSLogo.vue";
+import OpacitySidebar from "@/components/OpacitySidebar.vue";
 
 export default {
   name: "App",
-  components: { HrRed, MTSLogo },
+  components: { HrRed, MTSLogo, OpacitySidebar },
   methods: {
     goToLoginPage() {
       this.$router.push({ name: "Login" });
