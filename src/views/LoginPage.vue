@@ -14,10 +14,10 @@
       <vs-input
         state="#e30611"
         color="#e30611"
-        v-model="value_login"
-        label="Ваш логин"
+        v-model="email"
+        label="Ваш email"
       />
-      <vs-input color="#e30611" v-model="value_password" label="Пароль" />
+      <vs-input color="#e30611" v-model="password" label="Пароль" />
       <vs-button relief color="#e30611" @click="login"> Продолжить </vs-button>
     </div>
   </div>
@@ -25,7 +25,7 @@
 
 <script>
 import MTSLogo from "@/components/MTSLogo.vue";
-
+import axios from "axios";
 export default {
   name: "LoginPage",
   data() {
@@ -35,7 +35,18 @@ export default {
     };
   },
   methods: {
-    login() {},
+    login() {
+      axios.post('http://10.193.141.30:3000/login', {
+        email: this.email,
+        password: this.password,
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    },
   },
   components: { MTSLogo },
 };
