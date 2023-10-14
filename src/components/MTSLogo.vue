@@ -5,8 +5,8 @@
 <style>
 #logo {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 0.3rem;
+  left: 0.3rem;
   z-index: 10;
   width: 20rem;
 }

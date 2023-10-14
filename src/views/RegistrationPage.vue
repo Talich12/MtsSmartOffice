@@ -5,8 +5,8 @@
         display: flex;
         justify-content: center;
         background-color: #ffffff;
-        background-image: radial-gradient(#e30611 2px, #ffffff 2px);
-        background-size: 40px 40px;
+        background-image: radial-gradient(#e30611 4px, #ffffff 2px);
+        background-size: 10rem 10rem;
       "
     >
       <MTSLogo></MTSLogo>
@@ -41,6 +41,24 @@
           color="#e30611"
           v-model="value_confirmPassword"
           label="Повторите пароль"
+        />
+        <vs-input
+          state="#e30611"
+          color="#e30611"
+          v-model="value_phone"
+          label="Телефон"
+        />
+        <vs-input
+          state="#e30611"
+          color="#e30611"
+          v-model="value_email"
+          label="Email"
+        />
+        <vs-input
+          state="#e30611"
+          color="#e30611"
+          v-model="value_staff"
+          label="Ваш штат"
         />
         <vs-button relief color="#e30611" @click="register">
           Продолжить
