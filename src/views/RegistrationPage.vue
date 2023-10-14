@@ -5,8 +5,8 @@
         display: flex;
         justify-content: center;
         background-color: #ffffff;
-        background-image: radial-gradient(#e30611 2px, #ffffff 2px);
-        background-size: 40px 40px;
+        background-image: radial-gradient(#e30611 4px, #ffffff 2px);
+        background-size: 10rem 10rem;
       "
     >
       <MTSLogo></MTSLogo>

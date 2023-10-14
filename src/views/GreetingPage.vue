@@ -1,57 +1,9 @@
-import axios from 'axios';
-
-export default {
-  name: 'App',
-  components: { HrRed },
-  data() {
-    return {
-      email: '',
-      name: '',
-      surname: '',
-      patronymic: '',
-      phone: '',
-      rating: '',
-      state: '',
-      password: '',
-    };
-  },
-  methods: {
-    goToLoginPage() {
-      this.$router.push({ name: "Login" });
-    },
-    goToRegisterPage() {
-      this.$router.push({ name: "Registration" });
-    },
-    registerUser() {
-      axios.post('http://10.193.141.30:3000/signup', {
-        email: this.email,
-        name: this.name,
-        surname: this.surname,
-        patronymic: this.patronymic,
-        phone: this.phone,
-        rating: this.rating,
-        state: this.state,
-        password: this.password,
-      })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-    },
-  },
-};
-
-
-
 <template>
   <div
     style="display: flex; justify-content: center"
     class="animate__animated animate__fadeIn"
   >
     <MTSLogo></MTSLogo>
-    <OpacitySidebar></OpacitySidebar>
     <div class="homepage-container">
       <h1>
         Добро пожаловать в ваш
@@ -103,11 +55,10 @@ export default {
 <script>
 import HrRed from "@/components/HrRed.vue";
 import MTSLogo from "@/components/MTSLogo.vue";
-import OpacitySidebar from "@/components/OpacitySidebar.vue";
 
 export default {
   name: "App",
-  components: { HrRed, MTSLogo, OpacitySidebar },
+  components: { HrRed, MTSLogo },
   methods: {
     goToLoginPage() {
       this.$router.push({ name: "Login" });
