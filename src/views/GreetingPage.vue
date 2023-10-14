@@ -1,3 +1,50 @@
+import axios from 'axios';
+
+export default {
+  name: 'App',
+  components: { HrRed },
+  data() {
+    return {
+      email: '',
+      name: '',
+      surname: '',
+      patronymic: '',
+      phone: '',
+      rating: '',
+      state: '',
+      password: '',
+    };
+  },
+  methods: {
+    goToLoginPage() {
+      this.$router.push({ name: "Login" });
+    },
+    goToRegisterPage() {
+      this.$router.push({ name: "Registration" });
+    },
+    registerUser() {
+      axios.post('http://10.193.141.30:3000/signup', {
+        email: this.email,
+        name: this.name,
+        surname: this.surname,
+        patronymic: this.patronymic,
+        phone: this.phone,
+        rating: this.rating,
+        state: this.state,
+        password: this.password,
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    },
+  },
+};
+
+
+
 <template>
   <div
     style="display: flex; justify-content: center"
