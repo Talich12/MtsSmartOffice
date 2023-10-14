@@ -127,5 +127,11 @@ export default {
   width: fit-content;
   overflow-x: auto; /* Allow horizontal scrolling when content overflows */
   white-space: nowrap; /* Prevent wrapping of content to the next line */
+  scrollbar-width: none; /* Hide the scrollbar on Firefox */
+  -ms-overflow-style: none;
+}
+
+.content-container::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar on Webkit-based browsers (Chrome, Safari) */
 }
 </style>
