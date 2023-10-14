@@ -8,6 +8,8 @@
       <ComfortBlock></ComfortBlock>
       <h2>Помещения</h2>
       <RoomsBlock></RoomsBlock>
+      <h2>Доска объявлений</h2>
+      <OrderBLock></OrderBLock>
     </div>
     <OpacitySidebar></OpacitySidebar>
   </div>
@@ -17,8 +19,9 @@
 import OpacitySidebar from "@/components/OpacitySidebar.vue";
 import ComfortBlock from "../contentblocks/ComfortBlock.vue";
 import RoomsBlock from "../contentblocks/RoomsBlock.vue";
+import OrderBLock from "../contentblocks/OrderBoardBlock.vue"
 export default {
-  components: { OpacitySidebar, ComfortBlock, RoomsBlock },
+  components: { OpacitySidebar, ComfortBlock, RoomsBlock, OrderBLock },
 };
 </script>
 

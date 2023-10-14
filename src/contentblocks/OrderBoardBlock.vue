@@ -1,0 +1,63 @@
+<template>
+    <MainContentBlock>
+      <div class="content-container">
+        <vs-card type="2" style="margin-right: 2.5vh; margin-left: 2.5vh">
+          <template #title>
+            <h3>Доска объявления</h3>
+          </template>
+          <template #img>
+            <img src="../assets/board.jpg" alt="" />
+          </template>
+          <template #text>
+            <p>Не отвлекайся на бытовые пробелмы, пусть за тебя это сделают другие</p>
+          </template>
+        </vs-card>
+      </div>
+    </MainContentBlock>
+  </template>
+  
+  <script>
+  import MainContentBlock from "@/components/MainContentBlock.vue";
+  
+  export default {
+    components: { MainContentBlock },
+  };
+  </script>
+  
+  <style scoped>
+  ::v-deep .vs-card__img {
+    min-height: 450px;
+  }
+  ::v-deep .vs-card {
+    min-width: 95vw;
+    min-height: 450px;
+  }
+  ::v-deep .vs-card__text {
+    width: 100%;
+  }
+  .vs-card__text {
+    min-width: 400px;
+    font-size: 0.01rem;
+  }
+  .vs-card-content.type-2 .vs-card__text p {
+  font-family: "MTSExtended-Bold";
+  font-size: 20px;
+}
+.vs-card-content.type-2 .vs-card__text h3 {
+font-family: "MTSExtended-Bold";
+font-size: 40px;
+}
+  .content-container {
+    display: flex;
+    width: fit-content;
+    overflow-x: auto; /* Allow horizontal scrolling when content overflows */
+    white-space: nowrap; /* Prevent wrapping of content to the next line */
+    scrollbar-width: none; /* Hide the scrollbar on Firefox */
+    -ms-overflow-style: none;
+  }
+  
+  .content-container::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar on Webkit-based browsers (Chrome, Safari) */
+  }
+  </style>
+  
