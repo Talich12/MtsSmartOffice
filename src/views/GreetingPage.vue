@@ -86,8 +86,4 @@ export default {
   width: 60vw;
   height: 100vh;
 }
-
-body {
-  background-color: black;
-}
 </style>
