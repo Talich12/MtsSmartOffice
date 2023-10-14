@@ -5,11 +5,11 @@
         display: flex;
         justify-content: center;
         background-color: #ffffff;
-        opacity: 0.8;
         background-image: radial-gradient(#e30611 2px, #ffffff 2px);
         background-size: 40px 40px;
       "
     >
+      <MTSLogo></MTSLogo>
       <div class="register-container animate__animated animate__fadeIn">
         <h1>Регистрация</h1>
         <vs-input
@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import MTSLogo from "@/components/MTSLogo.vue";
+
 export default {
   name: "RegistrationPage",
   data() {
@@ -67,6 +69,7 @@ export default {
       // Registration logic goes here
     },
   },
+  components: { MTSLogo },
 };
 </script>
 
@@ -80,6 +83,7 @@ export default {
 .register-container .vs-input {
   min-width: 450px;
   font-size: 1.5rem;
+  border: 1px solid #e30611;
 }
 
 .register-container {

@@ -3,8 +3,7 @@
     style="display: flex; justify-content: center"
     class="animate__animated animate__fadeIn"
   >
-    <img id="logo" data="../assets/logofull.svg" type="svg" />
-
+    <MTSLogo></MTSLogo>
     <div class="homepage-container">
       <h1>
         Добро пожаловать в ваш
@@ -55,10 +54,11 @@
 
 <script>
 import HrRed from "@/components/HrRed.vue";
+import MTSLogo from "@/components/MTSLogo.vue";
 
 export default {
   name: "App",
-  components: { HrRed },
+  components: { HrRed, MTSLogo },
   methods: {
     goToLoginPage() {
       this.$router.push({ name: "Login" });
@@ -72,13 +72,6 @@ export default {
 
 <style>
 @import "../assets/fonts.css";
-
-#logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
 
 .login-buttons-container {
   margin: 0 auto;

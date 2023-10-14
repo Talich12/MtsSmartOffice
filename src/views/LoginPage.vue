@@ -4,11 +4,11 @@
       display: flex;
       justify-content: center;
       background-color: #ffffff;
-      opacity: 0.8;
       background-image: radial-gradient(#e30611 2px, #ffffff 2px);
       background-size: 40px 40px;
     "
   >
+    <MTSLogo></MTSLogo>
     <div class="login-container animate__animated animate__fadeIn">
       <h1>Войти</h1>
       <vs-input
@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import MTSLogo from "@/components/MTSLogo.vue";
+
 export default {
   name: "LoginPage",
   data() {
@@ -35,6 +37,7 @@ export default {
   methods: {
     login() {},
   },
+  components: { MTSLogo },
 };
 </script>
 
@@ -46,6 +49,7 @@ export default {
 }
 
 .login-container .vs-input {
+  border: 1px solid #e30611;
   min-width: 450px;
   font-size: 1.5rem;
 }
