@@ -1,15 +1,22 @@
 <template>
   <div style="display: flex; justify-content: center">
-    <div class="HomePageContainer">
-      <h1>Добро пожаловать в твой умный офис</h1>
+    <div class="homepage-container">
+      <h1>Добро пожаловать в ваш умный офис</h1>
       <HrRed />
-      <h2>Тебе стоит войти в аккаунт:</h2>
-      <div class="login">
-        <vs-button class="button" color="danger" type="filled">Войти</vs-button>
-        <vs-button class="button" color="danger" type="filled"
-          >Зарегистрироваться</vs-button
+      <h2>Для начала, стоит войти в аккаунт:</h2>
+      <div class="login-buttons-container">
+        <vs-button size="xl" block color="#e30611"> Войти </vs-button>
+        <vs-button
+          size="xl"
+          block
+          color="#e30611"
+          flat
+          style="margin-top: 1rem"
         >
+          У меня нет аккаунта
+        </vs-button>
       </div>
+      <p style="bottom: 0">© 2023 ПАО «МТС» Все права защищены</p>
     </div>
   </div>
 </template>
@@ -26,19 +33,21 @@ export default {
 <style>
 @import "../assets/fonts.css";
 
-.HomePageContainer {
-  width: 50vw;
+.login-buttons-container {
+  margin: 0 auto;
+  width: 30vw;
+}
+
+.homepage-container {
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60vw;
+  height: 100vh;
 }
 
 body {
   background-color: black;
-}
-
-.login {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 </style>

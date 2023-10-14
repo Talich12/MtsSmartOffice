@@ -3,8 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 
 import Vuesax from "vuesax";
-import "vuesax/dist/vuesax.css"; // Vuesax styles
 import "./assets/fonts.css";
+import "vuesax/dist/vuesax.css";
+
 Vue.config.productionTip = false;
 
 Vue.use(Vuesax);
