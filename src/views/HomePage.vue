@@ -4,13 +4,12 @@
       <img style="height: 3rem" src="../assets/logofull.svg" alt="Logo" />
     </header>
     <div style="width: 100vw; height: 100vh">
-      <vs-alert shadow color="#e30611">
-        <template #title> Vuesax Framework </template>
-        Vuesax (pronounced / vjusacksː /, as view sacks) is a
-        <b>UI components framework</b> created with
-      </vs-alert>
+      <h2 style="margin-top: 2vh">Удобства</h2>
       <ComfortBlock></ComfortBlock>
+      <h2>Помещения</h2>
       <RoomsBlock></RoomsBlock>
+      <h2>Доска объявлений</h2>
+      <OrderBLock></OrderBLock>
     </div>
     <OpacitySidebar></OpacitySidebar>
   </div>
@@ -19,9 +18,10 @@
 <script>
 import OpacitySidebar from "@/components/OpacitySidebar.vue";
 import ComfortBlock from "../contentblocks/ComfortBlock.vue";
-import RoomsBlock from "../contentblocks/RoomsBlock.vue"
+import RoomsBlock from "../contentblocks/RoomsBlock.vue";
+import OrderBLock from "../contentblocks/OrderBoardBlock.vue"
 export default {
-  components: { OpacitySidebar, ComfortBlock, RoomsBlock },
+  components: { OpacitySidebar, ComfortBlock, RoomsBlock, OrderBLock },
 };
 </script>
 
