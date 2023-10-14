@@ -4,7 +4,7 @@
       <img style="height: 3rem" src="../assets/logofull.svg" alt="Logo" />
     </header>
     <div style="width: 100vw; height: 100vh">
-      <h2 style="margin-top: 2vh">Устройства</h2>
+      <h2 style="margin-top: 2vh">Удобства</h2>
       <ComfortBlock></ComfortBlock>
       <h2>Помещения</h2>
       <RoomsBlock></RoomsBlock>

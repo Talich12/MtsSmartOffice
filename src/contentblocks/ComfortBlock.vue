@@ -9,17 +9,9 @@
           <img src="../assets/laptop.jpg" alt="" />
         </template>
         <template #text>
-          <p>ddd</p>
+          <p>Если у вас возникли эксплутационные проблемы</p>
         </template>
-        <template #interactions>
-          <vs-button danger icon>
-            <i class="bx bx-heart"></i>
-          </vs-button>
-          <vs-button class="btn-chat" shadow primary>
-            <i class="bx bx-chat"></i>
-            <span class="span"> 54 </span>
-          </vs-button>
-        </template> </vs-card
+        <template #interactions> </template> </vs-card
       ><vs-card type="2" style="margin-right: 2.5vh">
         <template #title>
           <h3>Заказать кофе</h3>
@@ -28,76 +20,42 @@
           <img src="../assets/coffee.jpg" alt="" />
         </template>
         <template #text>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <p>Закажите кофе удаленно и не ждите пока оно будет готово</p>
         </template>
-        <template #interactions>
-          <vs-button danger icon>
-            <i class="bx bx-heart"></i>
-          </vs-button>
-          <vs-button class="btn-chat" shadow primary>
-            <i class="bx bx-chat"></i>
-            <span class="span"> 54 </span>
-          </vs-button>
-        </template>
+        <template #interactions> </template>
       </vs-card>
       <vs-card type="2" style="margin-right: 2.5vh">
         <template #title>
-          <h3>Заказать кофе</h3>
+          <h3>Музыка в комнате отдыха</h3>
         </template>
         <template #img>
           <img src="../assets/volume.jpg" alt="" />
         </template>
         <template #text>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <p>Не стесняйтесь делиться с коллегами своим вкусом</p>
         </template>
-        <template #interactions>
-          <vs-button danger icon>
-            <i class="bx bx-heart"></i>
-          </vs-button>
-          <vs-button class="btn-chat" shadow primary>
-            <i class="bx bx-chat"></i>
-            <span class="span"> 54 </span>
-          </vs-button>
+        <template #interactions> </template>
+      </vs-card>
+      <vs-card type="2" style="margin-right: 2.5vh">
+        <template #title>
+          <h3>Закажите продукты</h3>
+        </template>
+        <template #img>
+          <img src="../assets/fridge.jpg" alt="" />
+        </template>
+        <template #text>
+          <p>Если вам жизненно необходим йогурт по утрам</p>
         </template>
       </vs-card>
       <vs-card type="2" style="margin-right: 2.5vh">
         <template #title>
-          <h3>Заказать кофе</h3>
+          <h3>Настроить климат</h3>
         </template>
         <template #img>
-          <img src="../assets/volume.jpg" alt="" />
+          <img src="../assets/thermomether.jpg" alt="" />
         </template>
         <template #text>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        </template>
-        <template #interactions>
-          <vs-button danger icon>
-            <i class="bx bx-heart"></i>
-          </vs-button>
-          <vs-button class="btn-chat" shadow primary>
-            <i class="bx bx-chat"></i>
-            <span class="span"> 54 </span>
-          </vs-button>
-        </template>
-      </vs-card>
-      <vs-card type="2" style="margin-right: 2.5vh">
-        <template #title>
-          <h3>Заказать кофе</h3>
-        </template>
-        <template #img>
-          <img src="../assets/volume.jpg" alt="" />
-        </template>
-        <template #text>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        </template>
-        <template #interactions>
-          <vs-button danger icon>
-            <i class="bx bx-heart"></i>
-          </vs-button>
-          <vs-button class="btn-chat" shadow primary>
-            <i class="bx bx-chat"></i>
-            <span class="span"> 54 </span>
-          </vs-button>
+          <p>Все, что бы вам было удобно</p>
         </template>
       </vs-card>
     </div>
@@ -113,6 +71,17 @@ export default {
 </script>
 
 <style>
+h3 {
+  font-family: "MTSExtended-Bold";
+  color: var(--main-color);
+  font-size: 3rem;
+}
+
+.vs-card-content.type-2 .vs-card__text p {
+  font-family: "MTSExtended-Bold";
+  font-size: 0.6rem;
+}
+
 .vs-card {
   min-width: 400px;
   min-height: 240px;
