@@ -5,6 +5,7 @@ import Login from "./views/LoginPage.vue";
 import Registration from "./views/RegistrationPage.vue";
 import Home from "./views/HomePage.vue";
 import Chill from "./views/ChillRoomPage"
+import Profile from "./views/ProfilePage.vue"
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/chill",
     name: "Chill",
     component: Chill,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
   }
 ];
 
