@@ -3,16 +3,24 @@
     <header class="header">
       <img style="height: 3rem" src="../assets/logofull.svg" alt="Logo" />
     </header>
-    <div style="width: 100vw; height: 100vh"></div>
+    <div style="width: 100vw; height: 100vh">
+      <vs-alert shadow color="#e30611">
+        <template #title> Vuesax Framework </template>
+        Vuesax (pronounced / vjusacksː /, as view sacks) is a
+        <b>UI components framework</b> created with
+      </vs-alert>
+      <ComfortBlock></ComfortBlock>
+    </div>
     <OpacitySidebar></OpacitySidebar>
   </div>
 </template>
 
 <script>
 import OpacitySidebar from "@/components/OpacitySidebar.vue";
+import ComfortBlock from "../contentblocks/ComfortBlock.vue";
 
 export default {
-  components: { OpacitySidebar },
+  components: { OpacitySidebar, ComfortBlock },
 };
 </script>
 
