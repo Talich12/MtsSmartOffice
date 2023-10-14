@@ -45,9 +45,9 @@ export default {
   align-items: start;
   width: 200px; /* Задайте ширину боковой панели по своему усмотрению */
   transition: transform 0.3s; /* Добавьте плавную анимацию для показа/скрытия */
-  transform: translateX(-100%); /* Начните боковую панель смещенной влево */
+  transform: translateX(-120%); /* Начните боковую панель смещенной влево */
   background-color: #fff; /* Цвет фона боковой панели */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Добавьте тень по вашему усмотрению */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Добавьте тень по вашему усмотрению */
   z-index: 1;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -63,6 +63,11 @@ export default {
   color: #000; /* Замените на желаемый цвет текста */
   text-decoration: none;
 }
+.sidebar-link:hover {
+  color: #E30611; 
+  transition: color 0.3s, transform 0.3s; 
+  
+}
 
 button {
   position: fixed;
@@ -70,10 +75,11 @@ button {
   left: 10px; /* Позиция кнопки в левом нижнем углу */
   bottom: 10px;
   border: none;
-  border-radius: 20%;
-  width: 90px;
-  height: 40px;
+  border-radius: 15px;
+  width: 105px;
+  height: 45px;
   background-color: #E30611;
   color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 </style>
