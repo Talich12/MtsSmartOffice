@@ -10,6 +10,7 @@
         <b>UI components framework</b> created with
       </vs-alert>
       <ComfortBlock></ComfortBlock>
+      <RoomsBlock></RoomsBlock>
     </div>
     <OpacitySidebar></OpacitySidebar>
   </div>
@@ -18,9 +19,9 @@
 <script>
 import OpacitySidebar from "@/components/OpacitySidebar.vue";
 import ComfortBlock from "../contentblocks/ComfortBlock.vue";
-
+import RoomsBlock from "../contentblocks/RoomsBlock.vue"
 export default {
-  components: { OpacitySidebar, ComfortBlock },
+  components: { OpacitySidebar, ComfortBlock, RoomsBlock },
 };
 </script>
 
