@@ -1,24 +1,17 @@
 <template>
   <div>
-    <vs-button color="#E30611"  size="large"  @click="toggleSidebar" class="menu-button">
-      Меню
-      <template #animate>
-        <i class='bx bx-menu'></i>
-      </template>
-    </vs-button>
+    <button @click="toggleSidebar" class="menu-button">Меню</button>
     <div class="sidebar" :class="{ 'sidebar-active': isSidebarOpen }">
       <router-link
         v-for="route in routes"
         :key="route.path"
         :to="route.path"
         class="sidebar-link"
-      >
+      > 
         <i :class="route.icon"></i>
-        <span class="menu-item-text">{{ route.name }}</span>
+        {{ route.name }}
       </router-link>
-      
     </div>
-    
   </div>
 </template>
 
@@ -26,7 +19,7 @@
 export default {
   data() {
     return {
-      isSidebarOpen: false, 
+      isSidebarOpen: false, // Флаг для открытия и закрытия боковой панели
       routes: [
         { path: "/registration", name: "Route 1", icon: "icon-class" },
         { path: "/login", name: "Route 2", icon: "icon-class" },
@@ -50,34 +43,37 @@ export default {
   left: 0.3rem;
   bottom: 4rem;
   align-items: start;
-  width: 130px; 
-  transition: transform 0.3s; 
-  transform: translateX(-200%); 
-  background-color: #fff; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  width: 200px; /* Задайте ширину боковой панели по своему усмотрению */
+  transition: transform 0.3s; /* Добавьте плавную анимацию для показа/скрытия */
+  transform: translateX(-100%); /* Начните боковую панель смещенной влево */
+  background-color: #fff; /* Цвет фона боковой панели */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Добавьте тень по вашему усмотрению */
   z-index: 1;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+
 .sidebar-active {
-  transform: translateY(0); 
+  transform: translateX(0); /* Показать боковую панель при активном классе */
 }
+
 .sidebar-link {
   padding: 0.5rem;
   font-family: "MTSExtended-Regular";
-  color: #000; 
-  color: var(--text-color);
+  color: #000; /* Замените на желаемый цвет текста */
   text-decoration: none;
 }
-.menu-button {
-  position: fixed; 
-  left: 0;
-  bottom: 0;
-  z-index: 2;
-}
-.sidebar-link:hover .menu-item-text {
-  color: #E30611; 
-  transition: color 0.3s, transform 0.3s; 
-  
+
+button {
+  position: fixed;
+  font-family: "MTSExtended-Regular";
+  left: 10px; /* Позиция кнопки в левом нижнем углу */
+  bottom: 10px;
+  border: none;
+  border-radius: 20%;
+  width: 90px;
+  height: 40px;
+  background-color: #E30611;
+  color: #fff;
 }
 </style>
