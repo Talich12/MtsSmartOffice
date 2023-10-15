@@ -8,7 +8,7 @@
         :style="{ 'animation-delay': `${index * 0.2}s` }"
         type="2"
         style="margin-right: 2.5vh; margin-left: 2.5vh"
-        @click="openDialog(index)"
+        @click="openDialog(card)"
       >
         <template #title>
           <h3>{{ card.title }}</h3>
@@ -21,10 +21,94 @@
         </template>
       </vs-card>
     </div>
-    <vs-dialog blur not-close v-model="dialogActive">
+
+    <vs-dialog
+      blur
+      not-close
+      v-model="dialogActive"
+      style="font-family: MTSExtended-Black"
+    >
       <template #header>
-          <h4 > Помощь с техникой</h4>
-        </template>
+        <h4>{{ selectedCard ? selectedCard.title : "" }}</h4>
+      </template>
+
+      <template #default>
+        <div v-if="selectedCard">
+          <div v-if="selectedCard.title === 'Помощь с техникой'">
+            <div class="DialogComfort">
+              <vs-input
+                class="inputCard1"
+                danger
+                v-model="value1"
+                placeholder="Что произошло?"
+              >
+                <template #icon>
+                  <i class="bx bx-mail-send"></i>
+                </template>
+              </vs-input>
+              <vs-button class="btnSend" danger @click="submitInput"
+                >Отправить</vs-button
+              >
+            </div>
+          </div>
+
+          <div
+            class="Dialog2"
+            v-else-if="selectedCard.title === 'Заказать кофе'"
+          >
+            <p>Вы можете заказать кофе.</p>
+            <div class="center" style="display: flex; justify-content: center">
+              <vs-button class="coffe" flat danger animation-type="vertical">
+                Кофе
+                <template #animate>
+                  <i class="bx bx-coffee-togo"></i> Заказать
+                </template>
+              </vs-button>
+            </div>
+          </div>
+          <div v-else-if="selectedCard.title === 'Музыка в комнате отдыха'">
+            <p>Сейчас играет:</p>
+            <vs-card type="2">
+              <template #title>
+                <h3>Queen</h3>
+              </template>
+              <template #img>
+                <img src="../../src/assets/queen.jpg" alt="" />
+              </template>
+              <template #text>
+                <p>BOHEMIAN RHAPSODY</p>
+              </template>
+            </vs-card>
+          </div>
+          <div v-else-if="selectedCard.title === 'Закажите продукты'">
+            <div class="DialogComfort">
+              <vs-input
+                class="inputCard1"
+                danger
+                v-model="value1"
+                placeholder="Что заказать?"
+              >
+                <template #icon>
+                  <i class="bx bx-mail-send"></i>
+                </template>
+              </vs-input>
+              <vs-button class="btnSend" danger @click="submitInput"
+                >Заказать</vs-button
+              >
+            </div>
+          </div>
+          <div v-else-if="selectedCard.title === 'Настроить климат'">
+            <vs-switch danger v-model="active1">
+              <template #off>
+                <i class="bx bxs-volume-mute"></i>
+              </template>
+              <template #on>
+                <i class="bx bxs-volume-full"></i>
+              </template>
+            </vs-switch>
+          </div>
+        </div>
+      </template>
     </vs-dialog>
   </MainContentBlock>
 </template>
@@ -34,28 +118,72 @@ import MainContentBlock from "@/components/MainContentBlock.vue";
 
 export default {
   components: { MainContentBlock },
-  data(){
-    return{
-      cards:[
-        { title: 'Помощь с техникой', img: "laptop.jpg", text: 'Если у вас возникли эксплутационные проблемы' },
-        { title: 'Заказать кофе', img: 'coffee.jpg', text: 'Закажите кофе удаленно и не ждите пока оно будет готово' },
-        { title: 'Музыка в комнате отдыха', img: 'volume.jpg', text: 'Не стесняйтесь делиться с коллегами своим вкусом' },
-        { title: 'Закажите продукты', img: 'fridge.jpg', text: 'Если вам жизненно необходим йогурт по утрам' },
-        { title: 'Настроить климат', img: 'thermomether.jpg', text: 'Все, что бы вам было удобно' },
+  data() {
+    return {
+      cards: [
+        {
+          title: "Помощь с техникой",
+          img: "laptop.jpg",
+          text: "Если у вас возникли эксплутационные проблемы",
+        },
+        {
+          title: "Заказать кофе",
+          img: "coffee.jpg",
+          text: "Закажите кофе удаленно и не ждите пока оно будет готово",
+        },
+        {
+          title: "Музыка в комнате отдыха",
+          img: "volume.jpg",
+          text: "Не стесняйтесь делиться с коллегами своим вкусом",
+        },
+        {
+          title: "Закажите продукты",
+          img: "fridge.jpg",
+          text: "Если вам жизненно необходим йогурт по утрам",
+        },
+        {
+          title: "Настроить климат",
+          img: "thermomether.jpg",
+          text: "Все, что бы вам было удобно",
+        },
       ],
       dialogActive: false,
+      selectedCard: null,
+      inputValue: "",
+      currentlyPlaying: "",
+      productInput: "",
     };
   },
   methods: {
-    openDialog(index) {
+    openDialog(card) {
+      this.selectedCard = card;
       this.dialogActive = true;
     },
+    submitInput() {},
+    submitProduct() {},
   },
 };
 </script>
 
 <style>
+.center {
+  text-align: center;
+  margin-top: 1rem;
+}
 
+.DialogComfort {
+  text-align: center;
+}
+
+.inputCard1 {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.btnSend {
+  margin: 0 auto;
+  display: block;
+}
 h3 {
   font-family: "MTSUltraExtended-Black";
   color: var(--main-color);
@@ -79,13 +207,13 @@ h3 {
 .content-container {
   display: flex;
   width: fit-content;
-  overflow-x: auto; /* Allow horizontal scrolling when content overflows */
-  white-space: nowrap; /* Prevent wrapping of content to the next line */
-  scrollbar-width: none; /* Hide the scrollbar on Firefox */
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 .content-container::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar on Webkit-based browsers (Chrome, Safari) */
+  display: none;
 }
 </style>
