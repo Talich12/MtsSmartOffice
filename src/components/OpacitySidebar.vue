@@ -47,7 +47,7 @@ export default {
   transform: translateX(-120%);
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 10;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
@@ -79,6 +79,7 @@ export default {
   background-color: #e30611;
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 button:hover {
   background-color: #b90b14;

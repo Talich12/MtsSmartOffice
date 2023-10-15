@@ -47,6 +47,8 @@
         <h2>Доска объявлений</h2>
       </div>
       <OrderBLock></OrderBLock>
+      <h2>Такси</h2>
+      <TaxiBlock></TaxiBlock>
     </div>
     <OpacitySidebar></OpacitySidebar>
   </div>
@@ -57,6 +59,7 @@ import OpacitySidebar from "@/components/OpacitySidebar.vue";
 import ComfortBlock from "../contentblocks/ComfortBlock.vue";
 import RoomsBlock from "../contentblocks/RoomsBlock.vue";
 import OrderBLock from "../contentblocks/OrderBoardBlock.vue";
+import TaxiBlock from "../contentblocks/TaxiBlock.vue";
 
 export default {
   components: {
@@ -64,6 +67,7 @@ export default {
     ComfortBlock,
     RoomsBlock,
     OrderBLock,
+    TaxiBlock,
   },
   data: () => ({
     currentTime: "",
