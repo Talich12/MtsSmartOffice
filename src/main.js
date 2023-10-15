@@ -2,11 +2,11 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-import Vuesax from "vuesax";
+import "vuesax/dist/vuesax.css";
 import "./assets/fonts.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "vuesax/dist/vuesax.css";
+import Vuesax from "vuesax";
 
 Vue.config.productionTip = false;
 

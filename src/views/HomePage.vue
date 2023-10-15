@@ -1,7 +1,11 @@
 <template>
   <div>
     <header class="header">
-      <img style="height: 3rem" src="../assets/logofull.svg" alt="Logo" />
+      <img
+        style="height: 3rem; z-index: 10"
+        src="../assets/logofull.svg"
+        alt="Logo"
+      />
     </header>
     <div style="width: 100vw; height: 100vh">
       <InteractionBlock></InteractionBlock>
@@ -36,6 +40,9 @@ export default {
     OrderBLock,
     InteractionBlock,
   },
+  data: () => ({
+    value_select: "",
+  }),
 };
 </script>
 
