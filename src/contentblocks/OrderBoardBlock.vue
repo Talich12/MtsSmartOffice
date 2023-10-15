@@ -1,7 +1,7 @@
 <template>
   <MainContentBlock>
     <div class="content-container">
-      <vs-card type="2" style="margin-left: 2.5vh">
+      <vs-card class="animate__animated animate__fadeIn" type="2" style="margin-left: 2.5vh">
         <template #title>
           <h3>Доска объявления</h3>
         </template>
@@ -46,7 +46,7 @@ export default {
   font-size: 20px;
 }
 .vs-card-content.type-2 .vs-card__text h3 {
-  font-family: "MTSExtended-Bold";
+  font-family: "MTSUltraExtended-Black";
   font-size: 40px;
 }
 .content-container {

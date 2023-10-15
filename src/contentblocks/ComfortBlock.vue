@@ -1,61 +1,22 @@
 <template>
   <MainContentBlock>
     <div class="content-container">
-      <vs-card type="2" style="margin-right: 2.5vh; margin-left: 2.5vh">
+      <vs-card
+        v-for="(card, index) in cards"
+        :key="index"
+        class="animate__animated animate__fadeInRight"
+        :style="{ 'animation-delay': `${index * 0.2}s` }"
+        type="2"
+        style="margin-right: 2.5vh; margin-left: 2.5vh"
+      >
         <template #title>
-          <h3>Помощь с техникой</h3>
+          <h3>{{ card.title }}</h3>
         </template>
         <template #img>
-          <img src="../assets/laptop.jpg" alt="" />
+          <img :src="require(`@/assets/${card.img}`)" alt="" />
         </template>
         <template #text>
-          <p>Если у вас возникли эксплутационные проблемы</p>
-        </template>
-        <template #interactions> </template> </vs-card
-      ><vs-card type="2" style="margin-right: 2.5vh">
-        <template #title>
-          <h3>Заказать кофе</h3>
-        </template>
-        <template #img>
-          <img src="../assets/coffee.jpg" alt="" />
-        </template>
-        <template #text>
-          <p>Закажите кофе удаленно и не ждите пока оно будет готово</p>
-        </template>
-        <template #interactions> </template>
-      </vs-card>
-      <vs-card type="2" style="margin-right: 2.5vh">
-        <template #title>
-          <h3>Музыка в комнате отдыха</h3>
-        </template>
-        <template #img>
-          <img src="../assets/volume.jpg" alt="" />
-        </template>
-        <template #text>
-          <p>Не стесняйтесь делиться с коллегами своим вкусом</p>
-        </template>
-        <template #interactions> </template>
-      </vs-card>
-      <vs-card type="2" style="margin-right: 2.5vh">
-        <template #title>
-          <h3>Закажите продукты</h3>
-        </template>
-        <template #img>
-          <img src="../assets/fridge.jpg" alt="" />
-        </template>
-        <template #text>
-          <p>Если вам жизненно необходим йогурт по утрам</p>
-        </template>
-      </vs-card>
-      <vs-card type="2" style="margin-right: 2.5vh">
-        <template #title>
-          <h3>Настроить климат</h3>
-        </template>
-        <template #img>
-          <img src="../assets/thermomether.jpg" alt="" />
-        </template>
-        <template #text>
-          <p>Все, что бы вам было удобно</p>
+          <p>{{ card.text }}</p>
         </template>
       </vs-card>
     </div>
@@ -67,12 +28,23 @@ import MainContentBlock from "@/components/MainContentBlock.vue";
 
 export default {
   components: { MainContentBlock },
+  data(){
+    return{
+      cards:[
+        { title: 'Помощь с техникой', img: "laptop.jpg", text: 'Если у вас возникли эксплутационные проблемы' },
+        { title: 'Заказать кофе', img: 'coffee.jpg', text: 'Закажите кофе удаленно и не ждите пока оно будет готово' },
+        { title: 'Музыка в комнате отдыха', img: 'volume.jpg', text: 'Не стесняйтесь делиться с коллегами своим вкусом' },
+        { title: 'Закажите продукты', img: 'fridge.jpg', text: 'Если вам жизненно необходим йогурт по утрам' },
+        { title: 'Настроить климат', img: 'thermomether.jpg', text: 'Все, что бы вам было удобно' },
+      ]
+    }
+  }
 };
 </script>
 
 <style>
 h3 {
-  font-family: "MTSExtended-Bold";
+  font-family: "MTSUltraExtended-Black";
   color: var(--main-color);
   font-size: 3rem;
 }

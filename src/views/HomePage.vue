@@ -9,26 +9,15 @@
     </header>
     <div style="width: 100vw; height: 100vh">
       <InteractionBlock></InteractionBlock>
-      <div class="center">
-        <vs-select placeholder="Select" v-model="value">
-          <vs-option label="Vuesax" value_select="1"> Vuesax </vs-option>
-          <vs-option label="Vue" value_select="2"> Vue </vs-option>
-          <vs-option label="Javascript" value_select="3">
-            Javascript
-          </vs-option>
-          <vs-option disabled label="Sass" value_select="4"> Sass </vs-option>
-          <vs-option label="Typescript" value_select="5">
-            Typescript
-          </vs-option>
-          <vs-option label="Webpack" value_select="6"> Webpack </vs-option>
-          <vs-option label="Nodejs" value_select="7"> Nodejs </vs-option>
-        </vs-select>
+      <div class="animate__animated animate__fadeIn">
+        <h2 style="margin-top: 2vh">Удобства</h2>
       </div>
-      <h2 style="margin-top: 2vh">Удобства</h2>
-      <ComfortBlock class="animate__animated animate__bounce"></ComfortBlock>
-      <h2>Помещения</h2>
+      <ComfortBlock></ComfortBlock>
+      <div class="animate__animated animate__fadeIn">
+        <h2>Помещения</h2>
+      </div>
       <RoomsBlock></RoomsBlock>
-      <div data-aos="fade-right">
+      <div class="animate__animated animate__fadeIn">
         <h2>Доска объявлений</h2>
       </div>
       <OrderBLock></OrderBLock>

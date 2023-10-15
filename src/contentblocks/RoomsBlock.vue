@@ -1,27 +1,22 @@
 <template>
   <MainContentBlock>
     <div class="content-container">
-      <vs-card type="2" style="margin-right: 2.5vh; margin-left: 2.5vh">
+      <vs-card
+        v-for="(card, index) in cards"
+        :key="index"
+        class="animate__animated animate__fadeInLeft"
+        :style="{ 'animation-delay': `${index * 0.2}s` }"
+        type="2"
+        style="margin-right: 2.5vh; margin-left: 2.5vh"
+      >
         <template #title>
-          <h3>Комнаты отдыха</h3>
+          <h3>{{ card.title }}</h3>
         </template>
         <template #img>
-          <img src="../assets/chill.jpg" alt="" />
+          <img :src="require(`@/assets/${card.img}`)" alt="" />
         </template>
         <template #text>
-          <p>ddd</p>
-        </template>
-      </vs-card>
-
-      <vs-card type="2" style="margin-right: 2.5vh">
-        <template #title>
-          <h3>Коворкинги</h3>
-        </template>
-        <template #img>
-          <img src="../assets/work.jpg" alt="" />
-        </template>
-        <template #text>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <p>{{ card.text }}</p>
         </template>
       </vs-card>
     </div>
@@ -33,6 +28,22 @@ import MainContentBlock from "@/components/MainContentBlock.vue";
 
 export default {
   components: { MainContentBlock },
+  data(){
+    return{
+      cards: [
+        {
+          title: 'Комнаты отдыха',
+          img: 'chill.jpg',
+          text: 'Сегодня прекрасный день для отдыха'
+        },
+        {
+          title: 'Коворкинги',
+          img: 'work.jpg',
+          text: 'Рабочая атмосфера для твоей продуктивности'
+        }
+      ]
+    }
+  }
 };
 </script>
 
@@ -50,6 +61,15 @@ export default {
 .vs-card__text {
   min-width: 400px;
   font-size: 0.01rem;
+}
+
+.vs-card-content.type-2 .vs-card__text p {
+  font-family: "MTSExtended-Bold";
+  font-size: 10px;
+}
+.vs-card-content.type-2 .vs-card__text h3 {
+  font-family: "MTSUltraExtended-Black";
+  font-size: 30px;
 }
 .content-container {
   display: flex;
