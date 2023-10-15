@@ -1,12 +1,16 @@
 <template>
   <MainContentBlock>
     <div class="content-container">
-      <vs-card class="animate__animated animate__fadeIn" type="2" style="margin-left: 2.5vh">
+      <vs-card
+        class="animate__animated animate__fadeIn"
+        type="2"
+        style="margin-left: 2.5vh"
+      >
         <template #title>
-          <h3>Доска объявления</h3>
+          <h3>Доска объявлений</h3>
         </template>
         <template #img>
-          <img src="../assets/shop.jpg" alt="" />
+          <img src="../assets/bulletinboard.jpg" alt="" />
         </template>
         <template #text>
           <p>
@@ -52,13 +56,13 @@ export default {
 .content-container {
   display: flex;
   width: fit-content;
-  overflow-x: auto; /* Allow horizontal scrolling when content overflows */
-  white-space: nowrap; /* Prevent wrapping of content to the next line */
-  scrollbar-width: none; /* Hide the scrollbar on Firefox */
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 .content-container::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar on Webkit-based browsers (Chrome, Safari) */
+  display: none;
 }
 </style>

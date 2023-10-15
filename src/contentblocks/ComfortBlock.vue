@@ -166,24 +166,6 @@ export default {
 </script>
 
 <style>
-.center {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.DialogComfort {
-  text-align: center;
-}
-
-.inputCard1 {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.btnSend {
-  margin: 0 auto;
-  display: block;
-}
 h3 {
   font-family: "MTSUltraExtended-Black";
   color: var(--main-color);
