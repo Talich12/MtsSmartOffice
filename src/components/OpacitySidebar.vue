@@ -21,8 +21,8 @@ export default {
     return {
       isSidebarOpen: false, // Флаг для открытия и закрытия боковой панели
       routes: [
-        { path: "/registration", name: "Route 1", icon: "icon-class" },
-        { path: "/login", name: "Route 2", icon: "icon-class" },
+        { path: "/registration", name: "Регистрация", icon: "icon-class" },
+        { path: "/login", name: "Вход", icon: "icon-class" },
         // Add more routes as needed
       ],
     };
@@ -60,7 +60,7 @@ export default {
 .sidebar-link {
   padding: 0.5rem;
   font-family: "MTSExtended-Regular";
-  color: #000; /* Замените на желаемый цвет текста */
+  color: #000; 
   text-decoration: none;
 }
 .sidebar-link:hover {
@@ -72,7 +72,7 @@ export default {
 button {
   position: fixed;
   font-family: "MTSExtended-Regular";
-  left: 10px; /* Позиция кнопки в левом нижнем углу */
+  left: 10px; 
   bottom: 10px;
   border: none;
   border-radius: 15px;
@@ -81,5 +81,9 @@ button {
   background-color: #E30611;
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+button:hover{
+  background-color: #b90b14;
+  transition: background-color 0.3s;
 }
 </style>
