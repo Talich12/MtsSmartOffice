@@ -28,17 +28,37 @@ import MainContentBlock from "@/components/MainContentBlock.vue";
 
 export default {
   components: { MainContentBlock },
-  data(){
-    return{
-      cards:[
-        { title: 'Помощь с техникой', img: "laptop.jpg", text: 'Если у вас возникли эксплутационные проблемы' },
-        { title: 'Заказать кофе', img: 'coffee.jpg', text: 'Закажите кофе удаленно и не ждите пока оно будет готово' },
-        { title: 'Музыка в комнате отдыха', img: 'volume.jpg', text: 'Не стесняйтесь делиться с коллегами своим вкусом' },
-        { title: 'Закажите продукты', img: 'fridge.jpg', text: 'Если вам жизненно необходим йогурт по утрам' },
-        { title: 'Настроить климат', img: 'thermomether.jpg', text: 'Все, что бы вам было удобно' },
-      ]
-    }
-  }
+  data() {
+    return {
+      cards: [
+        {
+          title: "Помощь с техникой",
+          img: "laptop.jpg",
+          text: "Если у вас возникли эксплутационные проблемы",
+        },
+        {
+          title: "Заказать кофе",
+          img: "coffee.jpg",
+          text: "Закажите кофе удаленно и не ждите пока оно будет готово",
+        },
+        {
+          title: "Музыка в комнате отдыха",
+          img: "volume.jpg",
+          text: "Не стесняйтесь делиться с коллегами своим вкусом",
+        },
+        {
+          title: "Закажите продукты",
+          img: "fridge.jpg",
+          text: "Если вам жизненно необходим йогурт по утрам",
+        },
+        {
+          title: "Настроить климат",
+          img: "thermomether.jpg",
+          text: "Все, что бы вам было удобно",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -66,13 +86,13 @@ h3 {
 .content-container {
   display: flex;
   width: fit-content;
-  overflow-x: auto; /* Allow horizontal scrolling when content overflows */
-  white-space: nowrap; /* Prevent wrapping of content to the next line */
-  scrollbar-width: none; /* Hide the scrollbar on Firefox */
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 .content-container::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar on Webkit-based browsers (Chrome, Safari) */
+  display: none;
 }
 </style>

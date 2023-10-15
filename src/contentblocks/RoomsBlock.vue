@@ -28,22 +28,27 @@ import MainContentBlock from "@/components/MainContentBlock.vue";
 
 export default {
   components: { MainContentBlock },
-  data(){
-    return{
+  data() {
+    return {
       cards: [
         {
-          title: 'Комнаты отдыха',
-          img: 'chill.jpg',
-          text: 'Сегодня прекрасный день для отдыха'
+          title: "Комнаты отдыха",
+          img: "chill.jpg",
+          text: "Сегодня прекрасный день для отдыха",
         },
         {
-          title: 'Коворкинги',
-          img: 'work.jpg',
-          text: 'Рабочая атмосфера для твоей продуктивности'
-        }
-      ]
-    }
-  }
+          title: "Коворкинги",
+          img: "work.jpg",
+          text: "Рабочая атмосфера для твоей продуктивности",
+        },
+        {
+          title: "Спортзалы",
+          img: "gym.jpg",
+          text: "Взять перерыв на спорт не бывает лишним",
+        },
+      ],
+    };
+  },
 };
 </script>
 
