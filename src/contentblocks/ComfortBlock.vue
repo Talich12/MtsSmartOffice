@@ -8,6 +8,7 @@
         :style="{ 'animation-delay': `${index * 0.2}s` }"
         type="2"
         style="margin-right: 2.5vh; margin-left: 2.5vh"
+        @click="openDialog(index)"
       >
         <template #title>
           <h3>{{ card.title }}</h3>
@@ -20,6 +21,11 @@
         </template>
       </vs-card>
     </div>
+    <vs-dialog blur not-close v-model="dialogActive">
+      <template #header>
+        <h4>Помощь с техникой</h4>
+      </template>
+    </vs-dialog>
   </MainContentBlock>
 </template>
 
@@ -57,7 +63,13 @@ export default {
           text: "Все, что бы вам было удобно",
         },
       ],
+      dialogActive: false,
     };
+  },
+  methods: {
+    openDialog(index) {
+      this.dialogActive = true;
+    },
   },
 };
 </script>

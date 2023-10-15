@@ -6,7 +6,12 @@
       style="display: none"
       @change="uploadImage"
     />
-    <vs-button @click="handleBrowseClick()">Select File</vs-button>
+    <div class="input">
+      <vs-button block @click="handleBrowseClick()">Выбрать фото</vs-button>
+      <vs-button success block @click="sendRequest()"
+        >Сделать предсказание</vs-button
+      >
+    </div>
   </div>
 </template>
 
@@ -14,6 +19,11 @@
 import axios from "axios";
 export default {
   props: ["mode"],
+  data() {
+    return {
+      form: [],
+    };
+  },
   methods: {
     handleBrowseClick() {
       document.getElementById("fileInput").click();
@@ -22,31 +32,37 @@ export default {
       let file = e.target.files[0];
       let formData = new FormData();
       formData.append("file", file);
-
+      this.form = formData;
+    },
+    sendRequest() {
       if (this.mode == "face-recognition") {
         axios
-          .post("http://10.193.141.30:3000/face-recognition", formData, {
+          .post("http://localhost:3000/face-recognition", this.form, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
           })
           .then((response) => {
+            this.$emit("name", response.data.name);
             console.log(response);
           })
           .catch((error) => {
+            // Обработка ошибки
             console.log(error);
           });
       } else if (this.mode == "people-count") {
         axios
-          .post("http://10.193.141.30:3000/people-count", formData, {
+          .post("http://localhost:3000/people-count", this.form, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
           })
           .then((response) => {
+            this.$emit("people_count", response.data.count);
             console.log(response);
           })
           .catch((error) => {
+            // Обработка ошибки
             console.log(error);
           });
       }
@@ -54,3 +70,12 @@ export default {
   },
 };
 </script>
+
+<style>
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+</style>
