@@ -8,6 +8,7 @@
         :style="{ 'animation-delay': `${index * 0.2}s` }"
         type="2"
         style="margin-right: 2.5vh; margin-left: 2.5vh"
+        @click="openDialog(index)"
       >
         <template #title>
           <h3>{{ card.title }}</h3>
@@ -20,6 +21,11 @@
         </template>
       </vs-card>
     </div>
+    <vs-dialog blur not-close v-model="dialogActive">
+      <template #header>
+          <h4 > Помощь с техникой</h4>
+        </template>
+    </vs-dialog>
   </MainContentBlock>
 </template>
 
@@ -36,13 +42,20 @@ export default {
         { title: 'Музыка в комнате отдыха', img: 'volume.jpg', text: 'Не стесняйтесь делиться с коллегами своим вкусом' },
         { title: 'Закажите продукты', img: 'fridge.jpg', text: 'Если вам жизненно необходим йогурт по утрам' },
         { title: 'Настроить климат', img: 'thermomether.jpg', text: 'Все, что бы вам было удобно' },
-      ]
-    }
-  }
+      ],
+      dialogActive: false,
+    };
+  },
+  methods: {
+    openDialog(index) {
+      this.dialogActive = true;
+    },
+  },
 };
 </script>
 
 <style>
+
 h3 {
   font-family: "MTSUltraExtended-Black";
   color: var(--main-color);
